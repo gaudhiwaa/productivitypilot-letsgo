@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "422493644949",
+    "project_id": "productivitypilot-bab48",
+    "storage_bucket": "productivitypilot-bab48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422493644949:android:13e869a9f4aa5cacaa939c",
+        "android_client_info": {
+          "package_name": "com.bangkit.productivitypilot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA37tWALxhOt9Oix9ntmn1nsePIbq7X-uY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
