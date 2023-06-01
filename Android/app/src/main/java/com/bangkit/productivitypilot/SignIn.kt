@@ -1,12 +1,13 @@
 package com.bangkit.productivitypilot
-
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -15,7 +16,7 @@ class SignIn : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var signInButton: Button
-    private lateinit var signUpTextView: TextView // Added signInTextView
+    private lateinit var signUpTextView: TextView
 
     private lateinit var auth: FirebaseAuth
 
@@ -26,9 +27,8 @@ class SignIn : AppCompatActivity() {
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         signInButton = findViewById(R.id.signInButton)
-        signUpTextView = findViewById(R.id.signUpTextView) // Initialize signInTextView
+        signUpTextView = findViewById(R.id.signUpTextView)
 
-        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
         signInButton.setOnClickListener {
@@ -46,6 +46,21 @@ class SignIn : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            val intent = Intent(this, SplashActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun signInUser(email: String, password: String) {
@@ -58,9 +73,9 @@ class SignIn : AppCompatActivity() {
                     user?.let {
                         val userId = it.uid
                         val intent = Intent(this, ProfileActivity::class.java)
-                        intent.putExtra("userId", userId) // Pass the userId to the ProfileActivity
+                        intent.putExtra("userId", userId)
                         startActivity(intent)
-                        finish() // Optional: Close the current activity to prevent going back
+                        finish()
                     }
                 } else {
                     // Sign-in failed
@@ -76,14 +91,11 @@ class SignIn : AppCompatActivity() {
             }
     }
 
-
     private fun isValidEmail(email: String): Boolean {
-        // Perform email validation logic here
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
     private fun isValidPassword(password: String): Boolean {
-        // Perform password validation logic here
         return password.length >= 6
     }
 }

@@ -37,7 +37,7 @@ class SignUpDetails : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(false)
 
         // Get userId from intent
         userId = intent.getStringExtra("userId") ?: ""

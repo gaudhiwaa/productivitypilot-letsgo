@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -16,14 +17,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var fullNameEditText: EditText
-    private lateinit var usernameEditText: EditText // Added usernameEditText
+    private lateinit var usernameEditText: EditText
     private lateinit var signUpButton: Button
     private lateinit var signInTextView: TextView
 
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
 
-    private var usernameTextWatcher: TextWatcher? = null // Track the TextWatcher to remove and reattach
+    private var usernameTextWatcher: TextWatcher? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,14 +33,13 @@ class MainActivity : AppCompatActivity() {
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         fullNameEditText = findViewById(R.id.fullNameEditText)
-        usernameEditText = findViewById(R.id.usernameEditText) // Initialize usernameEditText
+        usernameEditText = findViewById(R.id.usernameEditText)
         signUpButton = findViewById(R.id.signUpButton)
         signInTextView = findViewById(R.id.signInTextView)
 
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
-        // Initialize the TextWatcher for usernameEditText
         usernameTextWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 // Do nothing
@@ -50,31 +50,24 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                // Convert the input to lowercase
                 val lowercaseText = s?.toString()?.toLowerCase()
-
-                // Temporarily remove the TextWatcher to prevent infinite loop
                 usernameEditText.removeTextChangedListener(this)
-
-                // Update the EditText with the lowercase text
                 usernameEditText.setText(lowercaseText)
-
-                // Move the cursor to the end of the text
                 usernameEditText.setSelection(lowercaseText?.length ?: 0)
-
-                // Reattach the TextWatcher
                 usernameEditText.addTextChangedListener(this)
             }
         }
 
-        // Attach the TextWatcher to usernameEditText
         usernameEditText.addTextChangedListener(usernameTextWatcher)
+
+        setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) // Enable back button
 
         signUpButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
             val fullName = fullNameEditText.text.toString()
-            val username = usernameEditText.text.toString() // Get the username input
+            val username = usernameEditText.text.toString()
 
             if (isValidEmail(email) && isValidPassword(password) && fullName.isNotEmpty() && username.isNotEmpty()) {
                 auth.createUserWithEmailAndPassword(email, password)
@@ -87,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                                 val userMap = hashMapOf(
                                     "email" to email,
                                     "name" to fullName,
-                                    "username" to username // Add username to the userMap
+                                    "username" to username
                                 )
                                 firestore.collection("users")
                                     .document(userId)
@@ -115,6 +108,16 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SignIn::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            val intent = Intent(this, SplashActivity::class.java)
+            startActivity(intent)
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun isValidEmail(email: String): Boolean {

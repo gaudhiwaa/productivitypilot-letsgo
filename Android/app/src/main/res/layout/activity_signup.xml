@@ -12,7 +12,8 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Sign Up" />
+        app:title="Sign Up"
+        app:navigationIcon="@drawable/ic_back"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
