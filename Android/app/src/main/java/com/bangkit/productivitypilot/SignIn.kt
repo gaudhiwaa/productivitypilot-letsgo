@@ -52,9 +52,16 @@ class SignIn : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign-in success, navigate to the desired activity
+                    // Sign-in success, navigate to the profile screen
                     Toast.makeText(this, "Sign-in successful", Toast.LENGTH_SHORT).show()
-                    // Add your desired next steps after successful sign-in
+                    val user = auth.currentUser
+                    user?.let {
+                        val userId = it.uid
+                        val intent = Intent(this, ProfileActivity::class.java)
+                        intent.putExtra("userId", userId) // Pass the userId to the ProfileActivity
+                        startActivity(intent)
+                        finish() // Optional: Close the current activity to prevent going back
+                    }
                 } else {
                     // Sign-in failed
                     val exception = task.exception
@@ -68,6 +75,7 @@ class SignIn : AppCompatActivity() {
                 }
             }
     }
+
 
     private fun isValidEmail(email: String): Boolean {
         // Perform email validation logic here
