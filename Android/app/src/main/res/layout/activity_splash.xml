@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity">
+
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="214dp"
+        android:layout_height="58dp"
+        android:src="@drawable/logo_productivitypilot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35000002" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins"
+        android:text="Welcome to"
+        android:textFontWeight="400"
+        app:layout_constraintEnd_toEndOf="@+id/logoImageView"
+        app:layout_constraintStart_toStartOf="@+id/logoImageView"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+
+    <TextView
+        android:id="@+id/ProductivityPilot"
+        android:layout_width="343dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins"
+        android:text="ProductivityPilot"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/welcome"
+        app:layout_constraintStart_toStartOf="@+id/welcome"
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+    <Button
+        android:id="@+id/bt_signIp"
+        android:layout_width="374dp"
+        android:layout_height="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#2DBE78"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProductivityPilot" />
+
+    <Button
+        android:id="@+id/bt_signUp"
+        android:layout_width="374dp"
+        android:layout_height="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="#333333"
+        app:layout_constraintEnd_toEndOf="@+id/bt_signIp"
+        app:layout_constraintStart_toStartOf="@+id/bt_signIp"
+        app:layout_constraintTop_toBottomOf="@+id/bt_signIp" />
+
+    <TextView
+        android:id="@+id/term"
+        android:layout_width="439dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/term"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bt_signUp"
+        app:layout_constraintStart_toStartOf="@+id/bt_signUp"
+        app:layout_constraintTop_toBottomOf="@+id/bt_signUp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
