@@ -1,4 +1,4 @@
-# implementasion of haarcascades with windows camera
+# implementation of haarcascades with windows camera
 
 import cv2
 
