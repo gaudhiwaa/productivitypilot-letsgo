@@ -80,19 +80,40 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="#2DBE78" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:background="#FFFFFF" />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/profileImageView"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/account_circle" />
+        android:layout_marginTop="100dp"
+        android:src="@drawable/account_circle"
+        android:background="@drawable/rounded_image" />
 
     <TextView
         android:id="@+id/nameTextView"
@@ -111,28 +132,26 @@
         android:layout_below="@id/nameTextView"
         android:textSize="16sp"
         android:textColor="#808080"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/followersTextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/usernameTextView"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp" />
+        android:padding="16dp"
+        android:layout_below="@id/usernameTextView">
 
-    <TextView
-        android:id="@+id/followingTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <View
+        android:id="@+id/rectangleView"
+        android:layout_width="match_parent"
+        android:layout_weight="0.8"
+        android:layout_height="67dp"
+        android:layout_marginTop="6dp"
         android:layout_below="@id/usernameTextView"
-        android:layout_marginStart="16dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_toEndOf="@id/followersTextView" />
+        android:background="@drawable/rounded_rectangle" />
+
+    </LinearLayout>
 
 </RelativeLayout>
+
 
