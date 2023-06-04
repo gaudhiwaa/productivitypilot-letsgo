@@ -1,5 +1,6 @@
 package com.bangkit.productivitypilot
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.LayoutInflater
@@ -7,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.bangkit.productivitypilot.model.StatisticData
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class StatisticActivity : AppCompatActivity() {
 
     private lateinit var statisticData: StatisticData
+    private lateinit var bottomNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +46,40 @@ class StatisticActivity : AppCompatActivity() {
         hourFri.text = statisticData.hourFri
         hourSat.text = statisticData.hourSat
         hourSun.text = statisticData.hourSun
+
+//        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+//        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+//            when (item.itemId) {
+//                R.id.menu_home -> {
+//                    // Handle home item selection
+//                    true
+//                }
+//                R.id.menu_search -> {
+//                    // Handle search item selection
+//                    true
+//                }
+//                R.id.menu_profile -> {
+//                    // Handle profile item selection
+//                    val intent = Intent(this, ProfileActivity::class.java)
+//                    startActivity(intent)
+//                    true
+//                }
+//                R.id.menu_studycamera -> {
+//                    // Handle study camera item selection
+//                    true
+//
+//                }
+//                R.id.menu_statistics -> {
+//                    // Handle statistics item selection
+//                    val intent = Intent(this, StatisticActivity::class.java)
+//                    startActivity(intent)
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
     }
+
+
 }
 

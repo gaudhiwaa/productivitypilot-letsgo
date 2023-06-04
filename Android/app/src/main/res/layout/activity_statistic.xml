@@ -52,7 +52,6 @@
                     android:id="@+id/tv_Mon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
                     android:text="Mon"
                     android:textAlignment="center"
                     android:textColor="@color/green1"
@@ -95,7 +94,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
                     android:text="Tue"
                     android:textAlignment="center"
                     android:textColor="@color/green1"
@@ -137,7 +135,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
                     android:text="Wed"
                     android:textAlignment="center"
                     android:textColor="@color/green1"
@@ -179,7 +176,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
                     android:text="Thu"
                     android:textAlignment="center"
                     android:textColor="@color/green1"
@@ -221,7 +217,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
                     android:text="Fri"
                     android:textAlignment="center"
                     android:textColor="@color/green1"
@@ -263,7 +258,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
                     android:text="Sat"
                     android:textAlignment="center"
                     android:textColor="@color/green1"
@@ -305,7 +299,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
                     android:text="Sun"
                     android:textAlignment="center"
                     android:textColor="@color/green1"
@@ -465,7 +458,7 @@
             app:cardCornerRadius="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="323dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView
@@ -505,6 +498,17 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:id="@+id/bottomNavigationView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            app:menu="@menu/bottom_nav_menu"-->
+<!--            app:itemTextColor="@color/purple_200"-->
+<!--            app:labelVisibilityMode="unlabeled"-->
+<!--            app:itemIconTint="@drawable/selector_bottom_nav_icon"-->
+<!--            />-->
 
     </GridLayout>
 
