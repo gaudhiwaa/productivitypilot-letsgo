@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_community"
+        android:title="Search" />
+    <item
+        android:id="@+id/menu_studycamera"
+        android:icon="@drawable/ic_studycamera"
+        android:title="Study Camera" />
+    <item
+        android:id="@+id/menu_statistics"
+        android:icon="@drawable/ic_statistics"
+        android:title="Statistics" />
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/account_circle"
+        android:title="Profile" />
+</menu>

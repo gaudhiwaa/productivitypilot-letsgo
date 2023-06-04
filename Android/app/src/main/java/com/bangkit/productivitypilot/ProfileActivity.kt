@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
@@ -23,6 +24,8 @@ class ProfileActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
+
+    private lateinit var bottomNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,6 +89,35 @@ class ProfileActivity : AppCompatActivity() {
                     // Handle failure
                     progressBar.visibility = View.GONE // Hide the progress bar
                 }
+
+
+        }
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_home -> {
+                    // Handle home item selection
+                    true
+                }
+                R.id.menu_search -> {
+                    // Handle search item selection
+                    true
+                }
+                R.id.menu_profile -> {
+                    // Handle profile item selection
+                    true
+                }
+                R.id.menu_studycamera -> {
+                    // Handle study camera item selection
+                    true
+                }
+                R.id.menu_statistics -> {
+                    // Handle statistics item selection
+                    true
+                }
+                else -> false
+            }
         }
     }
 }
