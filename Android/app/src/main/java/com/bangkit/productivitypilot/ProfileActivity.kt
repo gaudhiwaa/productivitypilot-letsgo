@@ -1,4 +1,5 @@
 package com.bangkit.productivitypilot
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
@@ -111,13 +112,23 @@ class ProfileActivity : AppCompatActivity() {
                 R.id.menu_studycamera -> {
                     // Handle study camera item selection
                     true
+
                 }
                 R.id.menu_statistics -> {
                     // Handle statistics item selection
+                    val intent = Intent(this, StatisticActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false
             }
         }
     }
+
+
+
+
+
 }
+
+

@@ -41,6 +41,10 @@
             android:name=".ProfileActivity"
             android:label="Profile"
             android:theme="@style/Theme.ProductivityPilot" />
+        <activity
+            android:name=".StatisticActivity"
+            android:label="Statistics"
+            android:theme="@style/Theme.ProductivityPilot" />
 
         <meta-data
             android:name="preloaded_fonts"

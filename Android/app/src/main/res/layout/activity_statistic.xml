@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatisticFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/tv_statistic"
+        android:layout_width="107dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="Your Statistics"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:id="@+id/gridLayout2"
+        android:layout_width="412dp"
+        android:layout_height="134dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginStart="15dp"
+
+        android:layout_marginTop="6dp"
+        android:columnCount="7"
+        android:rowCount="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_statistic">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/tv_Mon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Mon"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="27dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/medal" />
+
+                <TextView
+                    android:id="@+id/hour_mon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Hour"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Tue"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/medal" />
+
+                <TextView
+                    android:id="@+id/hour_tue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Hour"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Wed"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/medal" />
+
+                <TextView
+                    android:id="@+id/hour_wed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Hour"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Thu"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/medal" />
+
+                <TextView
+                    android:id="@+id/hour_thu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Hour"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Fri"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/medal" />
+
+                <TextView
+                    android:id="@+id/hour_fri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Hour"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Sat"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/medal" />
+
+                <TextView
+                    android:id="@+id/hour_sat"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Hour"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="2dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Sun"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/medal" />
+
+                <TextView
+                    android:id="@+id/hour_sun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Hour"
+                    android:textAlignment="center"
+                    android:textColor="@color/green1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="536dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+
+        android:columnCount="1"
+        android:rowCount="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout2">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="4dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="323dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_kalender"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/kalender" />
+
+                <TextView
+                    android:id="@+id/tv_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Hours"
+                    app:layout_constraintStart_toStartOf="@+id/tv_daily"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_daily" />
+
+                <TextView
+                    android:id="@+id/tv_daily"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:text="Daily Productive Hours"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_kalender"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="4dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="323dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_kalender_w"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/kalender" />
+
+                <TextView
+                    android:id="@+id/tv_hour_w"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Hours"
+                    app:layout_constraintStart_toStartOf="@+id/tv_weekly"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_weekly" />
+
+                <TextView
+                    android:id="@+id/tv_weekly"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:text="Weekly Productive Hours"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_kalender_w"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="4dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="323dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_kalender_m"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/kalender" />
+
+                <TextView
+                    android:id="@+id/tv_hour_m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Hours"
+                    app:layout_constraintStart_toStartOf="@+id/tv_montly"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_montly" />
+
+                <TextView
+                    android:id="@+id/tv_montly"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:text="Montly Productive Hours"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_kalender_m"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
