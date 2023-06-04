@@ -19,6 +19,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var monthlyProductiveHourTextView: TextView
     private lateinit var userPointTextView: TextView
     private lateinit var userIdTextView: TextView
+    private lateinit var progressMedalBar: ProgressBar
 
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
@@ -30,6 +31,11 @@ class ProfileActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
         usernameTextView = findViewById(R.id.usernameTextView)
         nameTextView = findViewById(R.id.nameTextView)
+        progressMedalBar = findViewById(R.id.progressMedalBar)
+
+        // Set the progress to 30%
+        progressMedalBar.progress = 30
+
 //        emailTextView = findViewById(R.id.emailTextView)
 //        occupationTextView = findViewById(R.id.occupationTextView)
 //        institutionTextView = findViewById(R.id.institutionTextView)
