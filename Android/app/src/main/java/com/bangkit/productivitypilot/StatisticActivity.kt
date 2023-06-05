@@ -25,9 +25,7 @@ class StatisticActivity : AppCompatActivity() {
             hourTue = "0.6 Hrs",
             hourWed = "0.7 Hrs",
             hourThu = "0.5 Hrs",
-            hourFri = "0.9 Hrs",
-            hourSat = "0.4 Hrs",
-            hourSun = "0.3 Hrs"
+            hourFri = "0.9 Hrs"
         )
 
         // Initialize TextViews and display the values from statisticData
@@ -36,16 +34,12 @@ class StatisticActivity : AppCompatActivity() {
         val hourWed = findViewById<TextView>(R.id.hour_wed)
         val hourThu = findViewById<TextView>(R.id.hour_thu)
         val hourFri = findViewById<TextView>(R.id.hour_fri)
-        val hourSat = findViewById<TextView>(R.id.hour_sat)
-        val hourSun = findViewById<TextView>(R.id.hour_sun)
 
         hourMon.text = statisticData.hourMon
         hourTue.text = statisticData.hourTue
         hourWed.text = statisticData.hourWed
         hourThu.text = statisticData.hourThu
         hourFri.text = statisticData.hourFri
-        hourSat.text = statisticData.hourSat
-        hourSun.text = statisticData.hourSun
 
 //        bottomNavigationView = findViewById(R.id.bottomNavigationView)
 //        bottomNavigationView.setOnNavigationItemSelectedListener { item ->

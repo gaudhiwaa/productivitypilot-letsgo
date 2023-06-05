@@ -5,7 +5,6 @@ data class StatisticData(
     val hourTue: String,
     val hourWed: String,
     val hourThu: String,
-    val hourFri: String,
-    val hourSat: String,
-    val hourSun: String
+    val hourFri: String
+
 )
