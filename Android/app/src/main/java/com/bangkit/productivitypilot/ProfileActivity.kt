@@ -1,4 +1,6 @@
 package com.bangkit.productivitypilot
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
@@ -26,6 +28,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
 
     private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var sharedPrefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +51,8 @@ class ProfileActivity : AppCompatActivity() {
 //        userPointTextView = findViewById(R.id.userPointTextView)
 //        userIdTextView = findViewById(R.id.userIdTextView)
 
+        sharedPrefs = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
@@ -63,24 +68,12 @@ class ProfileActivity : AppCompatActivity() {
                     if (document != null && document.exists()) {
                         val username = document.getString("username")
                         val name = document.getString("name")
-                        val email = document.getString("email")
-                        val occupation = document.getString("occupation")
-                        val institution = document.getString("institution")
-                        val location = document.getString("location")
-                        val hobby = document.getString("hobby")
-                        val monthlyProductiveHour = document.getLong("monthlyProductiveHour")
-                        val userPoint = document.getLong("userPoint")
 
-                        usernameTextView.text = "@$username"
-                        nameTextView.text = "$name"
-//                        emailTextView.text = "Email: $email"
-//                        occupationTextView.text = "Occupation: $occupation"
-//                        institutionTextView.text = "Institution: $institution"
-//                        locationTextView.text = "Location: $location"
-//                        hobbyTextView.text = "Hobby: $hobby"
-//                        monthlyProductiveHourTextView.text = "Monthly Productive Hours: $monthlyProductiveHour"
-//                        userPointTextView.text = "User Points: $userPoint"
-//                        userIdTextView.text = "User ID: $userId"
+                        // Save the user information in SharedPreferences
+                        saveUserInformation(username, name)
+
+                        // Update the UI
+                        updateUI(username, name)
 
                         progressBar.visibility = View.GONE // Hide the progress bar
                     }
@@ -89,8 +82,13 @@ class ProfileActivity : AppCompatActivity() {
                     // Handle failure
                     progressBar.visibility = View.GONE // Hide the progress bar
                 }
+        } else {
+            // Retrieve the user information from SharedPreferences
+            val username = sharedPrefs.getString("username", "")
+            val name = sharedPrefs.getString("name", "")
 
-
+            // Update the UI
+            updateUI(username, name)
         }
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
@@ -110,6 +108,8 @@ class ProfileActivity : AppCompatActivity() {
                 }
                 R.id.menu_studycamera -> {
                     // Handle study camera item selection
+                    val intent = Intent(this, ProductiveCameraActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.menu_statistics -> {
@@ -118,6 +118,20 @@ class ProfileActivity : AppCompatActivity() {
                 }
                 else -> false
             }
+
         }
+
+    }
+
+    private fun saveUserInformation(username: String?, name: String?) {
+        val editor = sharedPrefs.edit()
+        editor.putString("username", username)
+        editor.putString("name", name)
+        editor.apply()
+    }
+
+    private fun updateUI(username: String?, name: String?) {
+        usernameTextView.text = "@$username"
+        nameTextView.text = "$name"
     }
 }
