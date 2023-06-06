@@ -56,7 +56,7 @@ class StatisticActivity : AppCompatActivity() {
                 }
                 R.id.menu_profile -> {
                     // Handle profile item selection
-                    val intent = Intent(this, ProfileActivity::class.java)
+                    val intent = Intent(this, ProfileFragment::class.java)
                     startActivity(intent)
                     true
                }
