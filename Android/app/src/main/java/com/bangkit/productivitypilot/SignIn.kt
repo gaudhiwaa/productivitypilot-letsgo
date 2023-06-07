@@ -72,7 +72,7 @@ class SignIn : AppCompatActivity() {
                     val user = auth.currentUser
                     user?.let {
                         val userId = it.uid
-                        val intent = Intent(this, ProfileActivity::class.java)
+                        val intent = Intent(this, NavigationActivity::class.java)
                         intent.putExtra("userId", userId)
                         startActivity(intent)
                         finish()

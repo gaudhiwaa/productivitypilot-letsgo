@@ -6,12 +6,10 @@ import android.hardware.Camera
 import android.os.Bundle
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AlertDialog
@@ -77,7 +75,7 @@ class ProductiveCameraActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
 
     private fun navigateToProfileActivity() {
-        val intent = Intent(this, ProfileActivity::class.java)
+        val intent = Intent(this, NavigationActivity::class.java)
         startActivity(intent)
         finish()
     }
