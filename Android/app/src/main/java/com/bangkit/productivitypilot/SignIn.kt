@@ -1,4 +1,5 @@
 package com.bangkit.productivitypilot
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -8,6 +9,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -43,7 +47,7 @@ class SignIn : AppCompatActivity() {
         }
 
         signUpTextView.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java) // Replace MainActivity with the activity that hosts the ProfileFragment
             startActivity(intent)
         }
 
@@ -67,17 +71,19 @@ class SignIn : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign-in success, navigate to the profile screen
+                    // Sign-in success, navigate to the StatisticFragment
                     Toast.makeText(this, "Sign-in successful", Toast.LENGTH_SHORT).show()
                     val user = auth.currentUser
                     user?.let {
                         val userId = it.uid
+
                         val intent = Intent(this, NavigationActivity::class.java)
                         intent.putExtra("userId", userId)
                         startActivity(intent)
                         finish()
+
                     }
-                } else {
+                }  else {
                     // Sign-in failed
                     val exception = task.exception
                     if (exception is FirebaseAuthInvalidUserException) {
@@ -90,6 +96,7 @@ class SignIn : AppCompatActivity() {
                 }
             }
     }
+
 
     private fun isValidEmail(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()

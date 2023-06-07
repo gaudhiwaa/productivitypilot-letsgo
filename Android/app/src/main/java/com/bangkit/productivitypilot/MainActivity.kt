@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         usernameEditText.addTextChangedListener(usernameTextWatcher)
 
-        setSupportActionBar(findViewById(R.id.toolbar))
+//        setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // Enable back button
 
         signUpButton.setOnClickListener {

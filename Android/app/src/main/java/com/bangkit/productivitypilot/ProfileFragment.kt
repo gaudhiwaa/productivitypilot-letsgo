@@ -77,6 +77,7 @@ class ProfileFragment : Fragment() {
         return view
     }
 
+
     private fun saveUserInformation(username: String?, name: String?) {
         val editor = sharedPrefs.edit()
         editor.putString("username", username)
@@ -88,4 +89,5 @@ class ProfileFragment : Fragment() {
         usernameTextView.text = "@$username"
         nameTextView.text = "$name"
     }
+
 }

@@ -34,7 +34,7 @@ class SignUpDetails : AppCompatActivity() {
 
         // Action bar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(false)
