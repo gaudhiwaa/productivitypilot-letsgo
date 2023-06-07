@@ -38,6 +38,7 @@ class NavigationActivity : AppCompatActivity() {
                     true
                 }
                 R.id.menu_statistics -> {
+                    replaceFragment(StatisticFragment())
                     true
                 }
                 else -> false

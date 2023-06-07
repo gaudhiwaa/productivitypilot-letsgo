@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.bangkit.productivitypilot.model.StatisticData
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class StatisticFragment : Fragment() {
 
@@ -41,38 +40,6 @@ class StatisticFragment : Fragment() {
         hourThu.text = statisticData.hourThu
         hourFri.text = statisticData.hourFri
 
-        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        bottomNavigationView?.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.menu_home -> {
-                    // Handle home item selection
-                    true
-                }
-                R.id.menu_search -> {
-                    // Handle search item selection
-                    true
-                }
-                R.id.menu_profile -> {
-                    // Handle profile item selection
-                    // Replace `YourProfileFragment` with the actual fragment you want to navigate to
-                    val fragment = Fragment()
-                    requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit()
-                    true
-                }
-                R.id.menu_studycamera -> {
-                    // Handle study camera item selection
-                    true
-                }
-                R.id.menu_statistics -> {
-                    // Handle statistics item selection
-                    // No need to navigate since the current fragment is already the statistics fragment
-                    true
-                }
-                else -> false
-            }
-        }
 
         return view
     }
