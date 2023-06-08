@@ -33,7 +33,7 @@ class NavigationActivity : AppCompatActivity() {
                     true
                 }
                 R.id.menu_studycamera -> {
-                    val intent = Intent(this, ProductiveCameraActivity::class.java)
+                    val intent = Intent(this, Productive::class.java)
                     startActivity(intent)
                     true
                 }

@@ -15,7 +15,7 @@
         app:title="Productive Camera"
         app:navigationIcon="@drawable/ic_back" />
 
-    <SurfaceView
+    <org.opencv.android.JavaCameraView
         android:id="@+id/cameraPreview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
