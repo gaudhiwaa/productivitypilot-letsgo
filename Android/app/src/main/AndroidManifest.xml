@@ -66,6 +66,10 @@
             android:name=".Productive"
             android:label="Productive"
             android:theme="@style/Theme.ProductivityPilot" />
+        <activity
+            android:name=".HomeFragment"
+            android:label="Home"
+            android:theme="@style/Theme.ProductivityPilot" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

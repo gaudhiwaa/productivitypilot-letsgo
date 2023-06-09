@@ -17,12 +17,13 @@ class NavigationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_navigation)
 
         // Set the ProfileFragment as the default fragment
-        replaceFragment(ProfileFragment())
+        replaceFragment(HomeFragment())
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.menu_home -> {
+                    replaceFragment(HomeFragment())
                     true
                 }
                 R.id.menu_search -> {

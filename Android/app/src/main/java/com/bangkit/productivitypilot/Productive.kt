@@ -2,7 +2,7 @@ package com.bangkit.productivitypilot
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -10,6 +10,9 @@ import androidx.core.content.ContextCompat
 import com.bangkit.productivitypilot.camerax.CameraManager
 import com.bangkit.productivitypilot.camerax.GraphicOverlay
 import androidx.camera.view.PreviewView
+import androidx.appcompat.widget.Toolbar
+import androidx.appcompat.app.AlertDialog
+import android.content.Intent
 //import kotlinx.android.synthetic.main.activity_main.*
 
 class Productive : AppCompatActivity() {
@@ -31,6 +34,14 @@ class Productive : AppCompatActivity() {
         createCameraManager()
         checkForPermission()
         onClicks()
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        toolbar.setNavigationOnClickListener {
+            showExitConfirmationDialog()
+        }
     }
 
     private fun checkForPermission() {
@@ -68,23 +79,62 @@ class Productive : AppCompatActivity() {
 
 
     private fun createCameraManager() {
-
+        previewViewFinder.setImplementationMode(PreviewView.ImplementationMode.COMPATIBLE)
+        previewViewFinder.rotation = 90.0f
         cameraManager = CameraManager(
             this,
             previewViewFinder,
             this,
             graphicOverlayFinder
         )
-//        previewViewFinder.rotation = 90.0f
+
     }
 
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
+    private fun showExitConfirmationDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_exit_confirmation, null)
+
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setView(dialogView)
+        val alertDialog = alertDialogBuilder.create()
+
+        val buttonYes = dialogView.findViewById<Button>(R.id.buttonYes)
+        val buttonNo = dialogView.findViewById<Button>(R.id.buttonNo)
+
+        buttonYes.setOnClickListener {
+            // If "Yes" is clicked, navigate to ProfileActivity
+            val intent = Intent(this, NavigationActivity::class.java)
+            startActivity(intent)
+            finish()
+            alertDialog.dismiss()
+        }
+
+        buttonNo.setOnClickListener {
+            // If "No" is clicked, close the dialog
+            alertDialog.dismiss()
+        }
+
+        alertDialog.show()
+    }
+
+    override fun onBackPressed() {
+        showExitConfirmationDialog()
+    }
+
     companion object {
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(android.Manifest.permission.CAMERA)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
