@@ -34,7 +34,7 @@ class SignUpDetails : AppCompatActivity() {
 
         // Action bar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(false)
@@ -67,7 +67,7 @@ class SignUpDetails : AppCompatActivity() {
                         // Add your desired next steps after successful registration
                         Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
                         // For example, navigate to the profile screen
-                        val intent = Intent(this, ProfileActivity::class.java)
+                        val intent = Intent(this, ProfileFragment::class.java)
                         intent.putExtra("userId", userId) // Pass the userId to the ProfileActivity
                         startActivity(intent)
                         finish() // Optional: Close the current activity to prevent going back

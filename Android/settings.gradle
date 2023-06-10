@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ProductivityPilot"
 include ':app'
+
+include ':opencv'
