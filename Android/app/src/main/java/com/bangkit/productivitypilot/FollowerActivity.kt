@@ -33,7 +33,7 @@ class FollowerActivity : AppCompatActivity() {
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
 
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
-        
+
         viewPager.adapter = sectionsPagerAdapter
 
         val tabs: TabLayout = findViewById(R.id.tabs)

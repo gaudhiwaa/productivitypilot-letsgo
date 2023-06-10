@@ -2,6 +2,7 @@ package com.bangkit.productivitypilot
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var userPointTextView: TextView
     private lateinit var userIdTextView: TextView
     private lateinit var progressMedalBar: ProgressBar
+    private lateinit var vfollower: LinearLayout
 
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
@@ -36,6 +38,13 @@ class ProfileActivity : AppCompatActivity() {
         usernameTextView = findViewById(R.id.usernameTextView)
         nameTextView = findViewById(R.id.nameTextView)
         progressMedalBar = findViewById(R.id.progressMedalBar)
+        vfollower = findViewById(R.id.v_follower)
+
+
+        // Perpindah ke FollowerFollowing Activity
+        vfollower.setOnClickListener {
+            startActivity(Intent(this, FollowerActivity::class.java))
+        }
 
         // Set the progress to 30%
         progressMedalBar.progress = 30

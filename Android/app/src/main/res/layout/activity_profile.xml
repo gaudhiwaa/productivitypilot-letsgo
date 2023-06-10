@@ -181,40 +181,39 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/v_follower"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@drawable/rounded_rectangle"
             android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:layout_marginTop="19dp">
+            android:layout_marginTop="19dp"
+            android:background="@drawable/rounded_rectangle"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/followersTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Followers"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/followersCountTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="32dp"
-                    android:textStyle="bold"
-                    android:textColor="#2DBE78"
                     android:layout_marginTop="4dp"
-                    />
+                    android:text="0"
+                    android:textColor="#2DBE78"
+                    android:textSize="32dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -235,21 +234,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Following"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/followingCountTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="32dp"
-                    android:textStyle="bold"
-                    android:textColor="#2DBE78"
                     android:layout_marginTop="4dp"
-                    />
+                    android:text="0"
+                    android:textColor="#2DBE78"
+                    android:textSize="32dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
