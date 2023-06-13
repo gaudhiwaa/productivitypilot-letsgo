@@ -9,12 +9,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignIn : AppCompatActivity() {
     private lateinit var emailEditText: EditText
@@ -71,19 +69,32 @@ class SignIn : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign-in success, navigate to the StatisticFragment
+                    // Sign-in success, navigate to the NavigationActivity
                     Toast.makeText(this, "Sign-in successful", Toast.LENGTH_SHORT).show()
                     val user = auth.currentUser
                     user?.let {
                         val userId = it.uid
 
+                        UserManager.setUserId(userId)
+
+                        // Get user information from Firestore
+                        val firestore = FirebaseFirestore.getInstance()
+                        firestore.collection("users")
+                            .document(userId)
+                            .get()
+                            .addOnSuccessListener { document ->
+                                if (document != null && document.exists()) {
+                                    val username = document.getString("username")
+                                    val name = document.getString("name")
+                                    UserManager.saveUserInformation(username, name)
+                                }
+                            }
+
                         val intent = Intent(this, NavigationActivity::class.java)
-                        intent.putExtra("userId", userId)
                         startActivity(intent)
                         finish()
-
                     }
-                }  else {
+                } else {
                     // Sign-in failed
                     val exception = task.exception
                     if (exception is FirebaseAuthInvalidUserException) {
@@ -96,7 +107,6 @@ class SignIn : AppCompatActivity() {
                 }
             }
     }
-
 
     private fun isValidEmail(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()

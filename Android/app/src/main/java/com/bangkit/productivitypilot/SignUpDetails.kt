@@ -57,8 +57,22 @@ class SignUpDetails : AppCompatActivity() {
                     "hobby" to hobby,
                     "userId" to userId,
                     "monthlyProductiveHour" to 0,
-                    "userPoint" to 0
+                    "userPoint" to 0,
+                    "dailyProductiveHour" to 0,
+                    "weeklyProductiveHour" to 0,
+                    "following" to listOf<String>()
                 )
+
+                firestore.collection("users")
+                    .document(userId)
+                    .get()
+                    .addOnSuccessListener { document ->
+                        if (document != null && document.exists()) {
+                            val username = document.getString("username")
+                            val name = document.getString("name")
+                            UserManager.saveUserInformation(username, name)
+                        }
+                    }
 
                 firestore.collection("users")
                     .document(userId)
@@ -67,7 +81,7 @@ class SignUpDetails : AppCompatActivity() {
                         // Add your desired next steps after successful registration
                         Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
                         // For example, navigate to the profile screen
-                        val intent = Intent(this, ProfileFragment::class.java)
+                        val intent = Intent(this, NavigationActivity::class.java)
                         intent.putExtra("userId", userId) // Pass the userId to the ProfileActivity
                         startActivity(intent)
                         finish() // Optional: Close the current activity to prevent going back
