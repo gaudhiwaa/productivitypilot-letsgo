@@ -1,9 +1,6 @@
 # productivitypilot-letsgo
 Bangkit 2023 Project Capstone: ProductivityPilot
 
-## Dataflow
-![Arsitektur](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Cloud%20Computing/Documentation/Dataflow.png)
-
 ## Setup Firebase to Android
 To connect firebase to Android you can check the Firebase [documentation](https://firebase.google.com/docs/android/setup#:~:text=Open%20the%20Firebase%20Assistant%3A%20Tools,your%20Android%20project%20with%20Firebase.)
 
