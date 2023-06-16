@@ -14,10 +14,16 @@ However, in the end, all of the above APIs were not used because the data could 
 ## Data Collection Flow
 
 1. User Authentication with (email/password?)
-2. Firestore Database
-3. Google Cloud Storage
+![Authentication](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Cloud%20Computing/Documentation/Authentication.png)
 
-![Arsitektur](https://raw.githubusercontent.com/rahielhafizh/Cloud-Computing/main/Struktur.png)
+2. Firestore Database
+![Firestore](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Cloud%20Computing/Documentation/Firestore%20Database.png)
+
+3. Google Cloud Storage
+![Firestore](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Cloud%20Computing/Documentation/Firebase%20Storage.png)
+
+
+![Arsitektur](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Cloud%20Computing/Documentation/Dataflow.png)
 
 Penjelasan isi database dan storage
 
