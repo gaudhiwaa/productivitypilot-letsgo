@@ -5,7 +5,7 @@ Productivitypilot is a community based application designed to help users, espec
 ![alt text](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Android/ui%20productivitypilot.jpg?raw=true)
 
 ## Library
-- Retrofit for API
+- FireBase
 - Tensorflow-lite for machine learning
 - Camera Library
 - Kotlin parcelize
