@@ -7,7 +7,8 @@ Productivitypilot is a community based application designed to help users, espec
 ## Library
 - Retrofit for API
 - Tensorflow-lite for machine learning
-
+- Camera Library
+- Kotlin parcelize
 
 ## features Application
 - Study Camera
@@ -15,5 +16,5 @@ Productivitypilot is a community based application designed to help users, espec
 - Ranking
 - Following
 
-# Development Team
+## Development Team
 muhammad darul arqam & Gaudhiwaa Hendrasto
