@@ -7,7 +7,7 @@ Productivitypilot is a community based application designed to help users, espec
 ## Library
 - FireBase
 - Tensorflow-lite for machine learning
-- Camera Library
+- Camera X for camera
 - Kotlin parcelize
 
 ## features Application
