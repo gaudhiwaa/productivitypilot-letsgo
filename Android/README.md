@@ -17,4 +17,4 @@ Productivitypilot is a community based application designed to help users, espec
 - Following
 
 ## Development Team
-muhammad darul arqam & Gaudhiwaa Hendrasto
+Muhammad Darul Arqam & Gaudhiwaa Hendrasto
