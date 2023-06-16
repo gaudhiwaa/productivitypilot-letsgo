@@ -11,7 +11,7 @@ Several APIs have been created, but they are not used because it turns out that 
 
 However, in the end, all of the above APIs were not used because the data could already be retrieved directly from Firebase.
 
-## Data Collection Flow
+## Data Collection
 
 1. User Authentication with (email/password?)
 ![Authentication](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Cloud%20Computing/Documentation/Authentication.png)
@@ -22,7 +22,7 @@ However, in the end, all of the above APIs were not used because the data could 
 3. Google Cloud Storage
 ![Firestore](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Cloud%20Computing/Documentation/Firebase%20Storage.png)
 
-
+## Dataflow
 ![Arsitektur](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Cloud%20Computing/Documentation/Dataflow.png)
 
 Penjelasan isi database dan storage
