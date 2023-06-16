@@ -1,5 +1,8 @@
-# productivitypilot-letsgo
-Bangkit 2023 Project Capstone: ProductivityPilot
+# ProductivityPilot Application
+Productivitypilot is a community based application designed to help users, especially students and professionals, increase their productivity and focus.
+
+## User Interface ProductivityPilot
+![alt text](https://github.com/gaudhiwaa/productivitypilot-letsgo/blob/main/Android/ui%20productivitypilot.jpg?raw=true)
 
 ## Setup Firebase to Android
 To connect firebase to Android you can check the Firebase [documentation](https://firebase.google.com/docs/android/setup#:~:text=Open%20the%20Firebase%20Assistant%3A%20Tools,your%20Android%20project%20with%20Firebase.)
